@@ -1,7 +1,7 @@
 ![UI Wrench](http://i.imgur.com/JdNg5EXs.jpg "UI Wrench") UI-Wrench 
 =========
 
-Do you know about all the stress of overwriting variable after variable, just to find out that your framework of choice comes with a ****load of variables, but doesn't use them where you *really* need them?
+Do you know about all the stress of overwriting variable after variable, just to find out that your framework of choice comes with a \*\*\*\*load of variables, but doesn't use them where you *really* need them?
 *Even worse:* You have to redefine classes and overwrite attributes _(if possible)_ to even out the mistakes of the creator of the framework of your choice.
 
 
