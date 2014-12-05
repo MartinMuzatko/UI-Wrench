@@ -1,0 +1,360 @@
+
+/* MAIN OUTLINE */
+body
+{
+	> section
+	{
+		.section;
+		> header
+		{
+			max-width: 35rem;
+		}
+	}
+
+	> footer
+	{
+		.section;
+	}
+}
+
+
+/* HEADER */
+
+.mainHeader
+{
+	margin: 0 @paddingContent;
+	padding: 2em 0;
+	position: relative;
+
+	h1
+	{
+		.outstand(@colorFillDark);
+		.transition(.5s);
+		background: @colorMain;
+		margin-bottom: .5em;
+		transform: scale(1);
+
+		a
+		{
+			color: @colorFillLight;
+		}
+		&:hover
+		{
+			transform: scale(1.1);
+		}
+	}
+	
+	.slogan
+	{
+		color: @colorFillDark;
+		background: @colorFillLight;
+		line-height: 2;
+		font-size: 1.5em;
+		font-family: @fontCaption;
+		.outstand(@colorFillDark);
+	}
+
+	h1, .slogan
+	{
+		@offset: 1rem;
+		display: inline-block;
+		position: relative;
+		left: -@offset;
+		padding: 0 @offset;
+	}
+
+	> nav
+	{
+		.navigation;
+		@media (min-width: 60rem)
+		{
+			position: absolute;
+			right: 0;
+			bottom: -@navLineHeight + @navOffset;
+		}
+	}
+}
+
+/* NAVIGATION */
+
+.language
+{
+	.navigation;
+	padding: 0 2em;
+	box-shadow: none;
+	display: inline-block;
+	position: absolute;
+	right: -1.5rem;
+	bottom: @navOffset;
+	.bevel(@colorFillLight, @bevelLeftUpper, 1rem);
+	&:after
+	{
+		background: none;
+	}
+	a
+	{
+		font-weight: 400;
+		line-height: 1.4;
+		text-shadow: none;
+		padding: 0 .75em 0 2em;
+
+	}
+
+}
+
+.navigation
+{
+	@dark:  @colorFillLight;
+	@light: @colorFillDark;
+	.transition;
+	padding: 0 1rem;
+	@media (max-width: 60rem)
+	{
+		margin: 1em;
+		font-size: 1em;
+		background: @light;
+	}	
+	@media (min-width: 60rem)
+	{
+		.halfSlant(@light, @bevelLeftUpper, 1rem);
+		position: absolute;
+	}
+
+	a
+	{
+		display: inline-block;
+		color: @colorMain;
+		font-weight: 600;
+		line-height: @navLineHeight;
+		padding: 0 1.5em;
+		margin: 0 .5em;
+		.outstand(@colorShadow);
+		&:hover, &.active
+		{
+			color: @colorFillDark;
+			box-shadow:	
+				0 .3em 0 @dark,
+				0 .6em 0 @colorMain;
+			@media (max-width: 60rem)
+			{
+				background: @dark;
+			}	
+			@media (min-width: 60rem)
+			{
+				.halfSlant(@dark, @bevelLeftUpper, 1rem);
+			}	
+		}
+	}
+}
+
+
+/* FOOTER */
+
+/* CONTENT - GALACON MANE6 NAVIGATION */
+
+.conventionelements
+{
+	.iconnav;
+	figure
+	{
+		img
+		{
+			.rounded;
+			.transition(.5s);
+		}
+
+		&:hover figcaption
+		{
+			transform: scale(1.1);
+		}
+		&:hover img
+		{
+			transform: scale(1.35);
+		}
+	}
+}
+
+.showguests
+{
+	.autobreak;
+	.persona(6em);
+	> *
+	{
+		.width(30em);
+		margin: 0;
+		padding: 1em;
+	}
+
+	figure
+	{
+		margin: 1em 0;
+		.autobreak(left);
+		img
+		{
+			margin-right: 1em;
+		}
+		> *
+		{
+			vertical-align: middle;
+		}
+
+		+ *
+		{
+			text-align: left;
+		}
+	}
+
+	figcaption
+	{
+		.titlegroup(left);
+	}
+}
+
+.news
+{
+	@media (min-width: 50em)
+	{
+		.row-fluid;
+	}
+
+	article
+	{
+		.tile;
+		h3 a
+		{
+			color: @colorFillLight;
+		}
+		@media (min-width: 50em)
+		{
+			.span4;
+		}
+		.post;
+		min-height: 15em;
+		margin-bottom: 1em;
+		position: relative;	
+		//margin: 1em 1em 1em 0;
+		padding: 1em 1em 2em;
+
+		time,.more
+		{
+			position: absolute;
+			bottom: 0;
+			padding: 1em;
+			line-height: 1.5;
+		}
+
+		time { left: 0; }
+		.more 
+		{	
+			right: 0;
+			color: @colorSecondary;
+		}
+
+		//&:first-child
+		//{
+		//	.tile(@colorSecondary);
+		//	color: @colorFillDark;
+		//	a
+		//	{
+		//		.outstand(@colorFillLight);
+		//		color: @colorFillDark;
+		//	}
+		//	//width: 100%;
+		//}
+	}
+}
+
+.post
+{
+	max-width: 35em;
+	h1
+	{
+		font-size: 1.5em;
+		a
+		{
+			color: @colorFillLight;
+		}
+	}
+	header p
+	{
+		font-size: 1.25em;
+	}
+
+}
+
+.breadcrumbs
+{
+	background: @colorBackground;
+	display: inline-block;
+	position: relative;
+	line-height: 2;
+	padding: 0 1em;
+
+	a:after
+	{
+		padding: 0 1em;
+		color: @colorFillLight;
+		content: '//';
+	}
+
+	&:after
+	{
+		position: absolute;
+		right: -2em;
+		height: 2em;
+		width: 2em;
+		content: '';
+		.bevel(@colorBackground, @bevelRightUpper, 50%);
+	}
+}
+
+/* MISC */
+
+.adminmenu
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: @colorFillDark;
+	padding: .4em;
+}
+
+.twitter
+{
+	figure
+	{
+		.personaFloat;
+		.tile;
+		margin: 0;
+	}
+	figcaption
+	{
+		color: @colorFillLight;
+	}
+}
+
+.twitterfeeds
+{
+	.feed
+	{
+		background: @colorFillLight;
+		border-radius: .5em;
+		margin: 1em 0;
+		padding: .5em;
+		color: @colorFillDark;
+	}
+}
+
+
+.social
+{
+	a
+	{
+		width: 3em;
+		display: inline-block;
+	}
+	a + a
+	{
+		margin-left: 1em;
+	}
+}
