@@ -18,7 +18,7 @@ But it became easier and way less mind-devastating to create my own tools and bu
 UI-Wrench is a compilation of common CSS tools written in LESS. For rapid development intended.
 
 ##No Bootstrap, no Foundation, no Blueprint
-_(it's not worth losing your insanity to a framework)_
+_(it's not worth losing your sanity to a framework)_
 Through painful months of using SASS and LESS bootstrap for several bigger projects, I decided to create my own tools.
 The only component I use from bootstrap is the grid system, and not even that one is ideal for what I want to achieve.
 There is no perfect tool that solves every tiny problem, just systems that are "good enough".
